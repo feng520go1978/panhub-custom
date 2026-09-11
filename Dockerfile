@@ -4,7 +4,7 @@ FROM node:20-alpine AS deps
 WORKDIR /app
 ENV PNPM_HOME=/root/.local/share/pnpm
 ENV PATH=$PNPM_HOME:$PATH
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@10.15.0 --activate
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm i --frozen-lockfile
 
